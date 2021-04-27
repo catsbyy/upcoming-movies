@@ -12,6 +12,5 @@ namespace UpcomingMovies
         public string poster_path { get; set; }
         public string release_date { get; set; }
         public string title { get; set; }
-        public double vote_average { get; set; }
     }
 }

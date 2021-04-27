@@ -17,7 +17,6 @@ namespace UpcomingMovies
     {
         public ObservableCollection<TheMovieDb> MoviesCollectionOnPage = new ObservableCollection<TheMovieDb>();
 
-        int page_number;
         int total_pages;
         int total_items;
 
@@ -37,9 +36,7 @@ namespace UpcomingMovies
 
             ResponseSearchMovies rootObject = JsonConvert.DeserializeObject<ResponseSearchMovies>(apiResponse);
 
-            page_number = rootObject.total_pages;
             total_pages = rootObject.total_pages;
-            total_items = rootObject.total_results;
 
             GetMovies(1);
         }
@@ -91,7 +88,6 @@ namespace UpcomingMovies
         {
             PagingInfo paging_info = new PagingInfo();
             paging_info.CurrentPage = 1;
-            paging_info.TotalItems = total_items;
             paging_info.TotalPages = total_pages;
             paging_info.FirstPage = 1;
             paging_info.MiddlePage = GetMiddlePage();
@@ -213,6 +209,7 @@ namespace UpcomingMovies
             return all_languages;
         }
 
+        //метод, який заповнює екземпляр фільмів даними
         private TheMovieDb CreateMovie(TheMovieDb movie, TheMovieDb rootObject)
         {
             movie.genres = rootObject.genres;
