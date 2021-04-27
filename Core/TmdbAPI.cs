@@ -18,7 +18,6 @@ namespace UpcomingMovies
         public ObservableCollection<TheMovieDb> MoviesCollectionOnPage = new ObservableCollection<TheMovieDb>();
 
         int total_pages;
-        int total_items;
 
         //метод, першочергово викликається для відображення першої сторінки з фільмами
         public void CallAPI()
@@ -256,6 +255,8 @@ namespace UpcomingMovies
             movieDetails.Add(movie);
             return movieDetails;
         }
+
+        //порожня колекція
         public ObservableCollection<TheMovieDb> ExampleMovieDetails()
         {
             ObservableCollection<TheMovieDb> exampleMovieDetails = new ObservableCollection<TheMovieDb>();

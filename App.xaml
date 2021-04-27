@@ -8,7 +8,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/MenuButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
