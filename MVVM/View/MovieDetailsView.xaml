@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="UpcomingMovies.MVVM.View.MovieDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UpcomingMovies.MVVM.View" 
+             mc:Ignorable="d" 
+             d:DesignHeight="460" d:DesignWidth="800"
+             Background="#272537">
+
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ScrollBar}">
+            <Setter Property="Background" Value="#1f1d2b"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </UserControl.Resources>
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" 
+                    Margin="10 0 10 10" 
+                    Grid.Column="0">
+                <Border.Background>
+                    <ImageBrush ImageSource="{Binding poster_path}" />
+                </Border.Background>
+            </Border>
+
+            <ScrollViewer Grid.Column="1" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock" x:Key="BasicTextBlock">
+                        <Setter Property="Foreground" Value="#bcbfcf"/>
+                        <Setter Property="FontSize" Value="18"/>
+                    </Style>
+
+                    <Style TargetType="TextBlock" x:Key="MovieTextBlock">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="18"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="Height" Value="Auto"/>
+                    </Style>
+                    
+                </StackPanel.Resources>
+                
+                <WrapPanel>
+                    <TextBlock Text="Title: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding title}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+                
+                <WrapPanel>
+                    <TextBlock Text="Original title: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding original_title}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+                
+                <WrapPanel>
+                    <TextBlock Text="Vote average: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding vote_average}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+                
+                <WrapPanel>
+                    <TextBlock Text="Tagline: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding tagline}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Release date: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding release_date}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Status: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding status}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Days left: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding days_left}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Country: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding all_countries}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Genres: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding all_genres}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Production company: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding all_companies}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                    <WrapPanel>
+                    <TextBlock Text="Runtime (minutes): " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding runtime}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Spoken languages: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding all_languages}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+
+                <WrapPanel>
+                    <TextBlock Text="Overview: " Style="{StaticResource BasicTextBlock}"/>
+                    <TextBlock Text="{Binding overview}" Style="{StaticResource MovieTextBlock}"/>
+                </WrapPanel>
+            </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</UserControl>

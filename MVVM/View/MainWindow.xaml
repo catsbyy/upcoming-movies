@@ -1,0 +1,160 @@
+﻿<Window x:Class="UpcomingMovies.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UpcomingMovies"
+        xmlns:viewModel="clr-namespace:UpcomingMovies.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowState="{Binding CurWindowState, Mode=TwoWay}">
+    
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#272537" 
+            CornerRadius="20"
+            MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="UpcomingMovies" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left" 
+                   Foreground="White" 
+                   FontSize="22"
+                   Margin="20 0 0 0"/>
+
+            <Button HorizontalAlignment="Right"
+                    Grid.Column="1"
+                    Content="Minimize"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Medium"
+                    Margin="0 0 90 0"
+                    Command="{Binding MinimizeApp}">
+                
+              <Button.Style>
+                <Style TargetType="Button">
+                  <Setter Property="Background" Value="#4c486e"/>
+                  <Setter Property="Cursor" Value="Hand"/>
+                  <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                      <Setter Property="Background" Value="#444163"/>
+                    </Trigger>
+                  </Style.Triggers>
+                </Style>
+              </Button.Style>
+
+              <Button.Template>
+                <ControlTemplate TargetType="Button">
+                  <Border Width="70" Height="30"
+                          CornerRadius="10"
+                          Background="{TemplateBinding Background}">
+
+                    <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                  </Border>
+                </ControlTemplate>
+              </Button.Template>
+            </Button>
+
+          <Button HorizontalAlignment="Right"
+                    Grid.Column="1"
+                    Content="Close"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Medium"
+                    Margin="0 0 10 0"
+                    Command="{Binding CloseApp}">
+                
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF4c70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="70" Height="30"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
+                <RadioButton Content="Discovery"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="false"
+                             Command="{Binding DiscoveryViewCommand}"/>
+                
+                <RadioButton Content="Movie Details"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="{Binding IsMovieDetailsButtonChecked}"
+                             Command="{Binding MovieDetailsViewCommand}"
+                             Name="MovieDetails"
+                             Visibility="{Binding MovieDetailsVisibility}"/>
+            </StackPanel>
+
+            <Border Grid.Column="1"
+                    Width="150"
+                    Height="40"
+                    Margin="30 0 0 0"
+                    CornerRadius="10"
+                    Background="#353340"
+                    HorizontalAlignment="Left">
+                <TextBlock Text="{Binding CurrentDate}"
+                           Foreground="DarkGray"
+                           FontSize="18"
+                           Margin="8"
+                           HorizontalAlignment="Center"/>
+            </Border>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
+
+</Window>
