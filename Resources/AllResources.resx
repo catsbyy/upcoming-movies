@@ -119,38 +119,38 @@
   </resheader>
   <data name="AllMoviesLinkTemplate" xml:space="preserve">
     <value>https://api.themoviedb.org/3/movie/upcoming?api_key=</value>
-    <comment>шаблон для формирования ссылки на список фильмов</comment>
+    <comment>шаблон для формування посилання на список фільмів</comment>
   </data>
   <data name="ApiKeyForLink" xml:space="preserve">
     <value>?api_key=</value>
   </data>
   <data name="ForDaysLeft" xml:space="preserve">
     <value> days ago</value>
-    <comment>добавление к результату, если фильм вышел раньше текущей даты</comment>
+    <comment>додаток до результату, якщо фільм вийшов раніше поточної дати</comment>
   </data>
   <data name="ForImageURL" xml:space="preserve">
     <value>https://www.themoviedb.org/t/p/w600_and_h900_bestv2</value>
-    <comment>шаблон для формирования ссылки на постер</comment>
+    <comment>шаблон для формування посилання на постер</comment>
   </data>
   <data name="InternetConnectionError" xml:space="preserve">
     <value>Відсутнє підключення до Інтернету. Перевірте підключення та перезапустіть програму</value>
-    <comment>текст ошибки подключения к интернету</comment>
+    <comment>текст помилки підключення до інтернету</comment>
   </data>
   <data name="MovieLinkTemplate" xml:space="preserve">
     <value>https://api.themoviedb.org/3/movie/</value>
-    <comment>шаблон для формирования ссылки на информацию конкретного фильма</comment>
+    <comment>шаблон для формування посилання на інформацію конкретного фільма</comment>
   </data>
   <data name="NoDaysLeft" xml:space="preserve">
     <value>0</value>
-    <comment>если фильм выходит сегодня</comment>
+    <comment>якщо фільм виходить не сьогодні</comment>
   </data>
   <data name="NoImagePath" xml:space="preserve">
     <value>https://www.nannihealthfood.com/img/m/11.jpg</value>
-    <comment>ссылка на картинку, если у фильма нет собственного постера</comment>
+    <comment>посилання на картинку, якщо у фільма поки що не існує власного постера</comment>
   </data>
   <data name="NoMorePagesMessage" xml:space="preserve">
     <value>Більше сторінок немає</value>
-    <comment>сообщение, что больше нет страниц для перелистывания</comment>
+    <comment>текст повідомлення, якщо більше не існує сторінок для гортання</comment>
   </data>
   <data name="PageForLink" xml:space="preserve">
     <value>&amp;page=</value>
@@ -160,10 +160,10 @@
   </data>
   <data name="SortForLink" xml:space="preserve">
     <value>&amp;sort_by=popularity</value>
-    <comment>для сортировки по популярности</comment>
+    <comment>для сортування за популярністю</comment>
   </data>
   <data name="WantToClose" xml:space="preserve">
     <value>Закрити програму?</value>
-    <comment>текст для окна, подтверждающего выход</comment>
+    <comment>текст для вікна, який підтверджує вихід з програми</comment>
   </data>
 </root>
