@@ -79,24 +79,20 @@ namespace UpcomingMovies
             {
                 CustomMessageBox.Show(AllResources.InternetConnectionError, MessageBoxButton.OK);
             }
-
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = homeView;
                 MovieDetailsVisibility = "Hidden";
             });
-
             DiscoveryViewCommand = new RelayCommand(o =>
             {
                 CurrentView = discoveryView;
                 MovieDetailsVisibility = "Hidden";
             });
-
             MovieDetailsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = movieDetailsView;
-            });
-            
+            });  
         }
 
         public ICommand CloseApp

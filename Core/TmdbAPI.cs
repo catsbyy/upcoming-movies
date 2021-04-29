@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
-using System.Net.Http;
 using System.Net;
 using UpcomingMovies.MVVM.Model;
 using UpcomingMovies.Resources;
@@ -22,10 +18,13 @@ namespace UpcomingMovies
         //метод, першочергово викликається для відображення першої сторінки з фільмами
         public void CallAPI()
         {
+            //рядок, який містить запит (посилання)
             string upcomingMoviesLink = AllResources.AllMoviesLinkTemplate + ResourceAPI.api_key + AllResources.SortForLink;
 
+            //створення запиту на основі попереднього рядка
             HttpWebRequest apiRequest = WebRequest.Create(upcomingMoviesLink) as HttpWebRequest;
 
+            //зчитування всього тексту, який повернув TheMovieDatabase, у apiResponse 
             string apiResponse = "";
             using (HttpWebResponse response = apiRequest.GetResponse() as HttpWebResponse)
             {
@@ -33,10 +32,11 @@ namespace UpcomingMovies
                 apiResponse = reader.ReadToEnd();
             }
 
+            //обробка тексту apiResponse, використовуючи десеріалізацію JSON-формату, запис результату у екземпляр класу ResponseSearchMovies
             ResponseSearchMovies rootObject = JsonConvert.DeserializeObject<ResponseSearchMovies>(apiResponse);
 
             total_pages = rootObject.total_pages;
-
+            //отримання колекції фільмів з 1 сторінки
             GetMovies(1);
         }
 
@@ -55,6 +55,7 @@ namespace UpcomingMovies
         //метод, надсилає запит та оброблює його, щоб відобразити всі фільми на конкретній сторінці 
         public void GetMovies(int page_number)
         {
+            //очищення колекції, щоб заповнити тільки фільмами з конкретної сторінки
             MoviesCollectionOnPage.Clear();
 
             string upcomingMoviesLink = AllResources.AllMoviesLinkTemplate + ResourceAPI.api_key + AllResources.PageForLink + page_number + AllResources.RegionForLink;
@@ -70,19 +71,21 @@ namespace UpcomingMovies
 
             ResponseSearchMovies rootObject = JsonConvert.DeserializeObject<ResponseSearchMovies>(apiResponse);
 
+            //
             foreach (Result result in rootObject.results)
             {
+                //створення нового екземпляру фільму
                 TheMovieDb movie = new TheMovieDb();
                 movie.title = result.title;
                 movie.poster_path = CreatePosterPath(result.poster_path);
                 movie.release_date = RightDateFormat(result.release_date);
                 movie.id = result.id;
-
+                //додавання екземпляру фільму до колекції фільмів на сторінці
                 MoviesCollectionOnPage.Add(movie);
             }
         }
 
-        //метод, який повертає значення про кількість сторінок та кількість фільмів
+        //метод, який повертає значення про кількість сторінок 
         public PagingInfo GetPagingInfo()
         {
             PagingInfo paging_info = new PagingInfo();
