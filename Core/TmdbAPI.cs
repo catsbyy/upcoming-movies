@@ -71,7 +71,6 @@ namespace UpcomingMovies
 
             ResponseSearchMovies rootObject = JsonConvert.DeserializeObject<ResponseSearchMovies>(apiResponse);
 
-            //
             foreach (Result result in rootObject.results)
             {
                 //створення нового екземпляру фільму
