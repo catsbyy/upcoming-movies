@@ -133,7 +133,7 @@
     <comment>шаблон для формування посилання на постер</comment>
   </data>
   <data name="InternetConnectionError" xml:space="preserve">
-    <value>Відсутнє підключення до Інтернету. Перевірте підключення та перезапустіть програму</value>
+    <value>No internet connection. Check the connection and restart the program</value>
     <comment>текст помилки підключення до інтернету</comment>
   </data>
   <data name="MovieLinkTemplate" xml:space="preserve">
@@ -149,7 +149,7 @@
     <comment>посилання на картинку, якщо у фільма поки що не існує власного постера</comment>
   </data>
   <data name="NoMorePagesMessage" xml:space="preserve">
-    <value>Більше сторінок немає</value>
+    <value>No more pages</value>
     <comment>текст повідомлення, якщо більше не існує сторінок для гортання</comment>
   </data>
   <data name="PageForLink" xml:space="preserve">
@@ -163,7 +163,7 @@
     <comment>для сортування за популярністю</comment>
   </data>
   <data name="WantToClose" xml:space="preserve">
-    <value>Закрити програму?</value>
+    <value>Do you want to close the app?</value>
     <comment>текст для вікна, який підтверджує вихід з програми</comment>
   </data>
 </root>

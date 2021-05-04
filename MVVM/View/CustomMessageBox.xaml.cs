@@ -35,20 +35,20 @@ namespace UpcomingMovies.MVVM.View
             switch (buttons)
             {
                 case MessageBoxButton.OK:
-                    AddButton("ОК", MessageBoxResult.OK);
+                    AddButton("OK", MessageBoxResult.OK);
                     break;
                 case MessageBoxButton.OKCancel:
-                    AddButton("ОК", MessageBoxResult.OK);
-                    AddButton("Відмінити", MessageBoxResult.Cancel, isCancel: true);
+                    AddButton("OK", MessageBoxResult.OK);
+                    AddButton("Cancel", MessageBoxResult.Cancel, isCancel: true);
                     break;
                 case MessageBoxButton.YesNo:
-                    AddButton("Так", MessageBoxResult.Yes);
-                    AddButton("Ні", MessageBoxResult.No);
+                    AddButton("Yes", MessageBoxResult.Yes);
+                    AddButton("No", MessageBoxResult.No);
                     break;
                 case MessageBoxButton.YesNoCancel:
-                    AddButton("Так", MessageBoxResult.Yes);
-                    AddButton("Ні", MessageBoxResult.No);
-                    AddButton("Відмінити", MessageBoxResult.Cancel, isCancel: true);
+                    AddButton("Yes", MessageBoxResult.Yes);
+                    AddButton("No", MessageBoxResult.No);
+                    AddButton("Cancel", MessageBoxResult.Cancel, isCancel: true);
                     break;
                 default:
                     throw new ArgumentException("Unknown button value", "buttons");

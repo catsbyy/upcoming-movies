@@ -8,7 +8,7 @@
              d:DesignHeight="460" d:DesignWidth="800">
 
     <StackPanel>
-        <TextBlock Text="Вітаю!"
+        <TextBlock Text="Welcome!"
                        Foreground="White"
                        FontSize="28"
                        HorizontalAlignment="Left"
@@ -35,12 +35,12 @@
                     <StackPanel VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
                                 Margin="20">
-                        <TextBlock Text="Програма UpcomingMovies призначена для перегляду фільмів, які скоро вийдуть у прокат"
+                        <TextBlock Text="UpcomingMovies is designed to show a list of movies that will be released soon and show their descriptions"
                                    Foreground="White"
                                    FontSize="20"
                                    TextWrapping="Wrap"
                                    TextAlignment="Center"/>
-                        <TextBlock Text="Інформація фільмів на основі даних TMDb"
+                        <TextBlock Text="Movie information based on TMDb data"
                                    Foreground="White"
                                    FontSize="20"
                                    TextWrapping="Wrap"
@@ -56,8 +56,8 @@
                     CornerRadius="10"
                     Margin="45 0 0 0">
 
-                <TextBlock Text="Розробив Андрусенко Валерій,
-                                   ФІТ, 2 курс, 6 група"
+                <TextBlock Text="Developed by Valerii Andrusenko,
+                                    FIT, 2nd year, 6th group"
                            Foreground="White"
                            FontSize="18"
                            Margin="10"
@@ -82,7 +82,7 @@
                     <Setter Property="Margin" Value="15 0 0 0"/>
                 </Style>
             </StackPanel.Resources>
-            <TextBlock Text="Як користуватися програмою"
+            <TextBlock Text="How to use"
                        Foreground="White"
                        FontSize="20"
                        HorizontalAlignment="Left"
@@ -94,7 +94,7 @@
                         Background="#844eff"
                         CornerRadius="10"
                         Margin="0">
-                    <TextBlock Text="Щоб переглянути список, натисніть Discovery"
+                    <TextBlock Text="To view the list, click Discovery"
                                Foreground="White"
                                FontSize="16"
                                Margin="10 10 10 10"
@@ -108,7 +108,7 @@
                         Height="160"
                         Background="#4e99ff"
                         CornerRadius="10">
-                    <TextBlock Text="Навігація сторінок здійсюється кнопками знизу"
+                    <TextBlock Text="Pages are navigated with buttons at the bottom"
                                Foreground="White"
                                FontSize="16"
                                Margin="10 10 10 10"
@@ -122,7 +122,7 @@
                         Height="160"
                         Background="#66CC99"
                         CornerRadius="10">
-                    <TextBlock Text="Подвійний клік по фільму відкриває його детальну інформацію"
+                    <TextBlock Text="Double-clicking on a movie opens its details"
                                Foreground="White"
                                FontSize="16"
                                Margin="10 10 10 10"
@@ -136,7 +136,7 @@
                         Height="160"
                         Background="#E74C3C"
                         CornerRadius="10">
-                    <TextBlock Text="Щоб повернутися до загального списку, натисніть Discovery"
+                    <TextBlock Text="To return to the general list, click Discovery"
                                Foreground="White"
                                FontSize="16"
                                Margin="10 10 10 10"

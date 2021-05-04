@@ -97,7 +97,7 @@ namespace UpcomingMovies.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Відсутнє підключення до Інтернету. Перевірте підключення та перезапустіть програму.
+        ///   Ищет локализованную строку, похожую на No internet connection. Check the connection and restart the program.
         /// </summary>
         public static string InternetConnectionError {
             get {
@@ -133,7 +133,7 @@ namespace UpcomingMovies.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Більше сторінок немає.
+        ///   Ищет локализованную строку, похожую на No more pages.
         /// </summary>
         public static string NoMorePagesMessage {
             get {
@@ -169,7 +169,7 @@ namespace UpcomingMovies.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Закрити програму?.
+        ///   Ищет локализованную строку, похожую на Do you want to close the app?.
         /// </summary>
         public static string WantToClose {
             get {
