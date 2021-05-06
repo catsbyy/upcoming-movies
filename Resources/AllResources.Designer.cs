@@ -79,6 +79,24 @@ namespace UpcomingMovies.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на buttons.
+        /// </summary>
+        public static string ButtonsText {
+            get {
+                return ResourceManager.GetString("ButtonsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Cancel.
+        /// </summary>
+        public static string CancelButtonText {
+            get {
+                return ResourceManager.GetString("CancelButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на  days ago.
         /// </summary>
         public static string ForDaysLeft {
@@ -115,6 +133,15 @@ namespace UpcomingMovies.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на No.
+        /// </summary>
+        public static string NoButtonText {
+            get {
+                return ResourceManager.GetString("NoButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 0.
         /// </summary>
         public static string NoDaysLeft {
@@ -138,6 +165,15 @@ namespace UpcomingMovies.Resources {
         public static string NoMorePagesMessage {
             get {
                 return ResourceManager.GetString("NoMorePagesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на OK.
+        /// </summary>
+        public static string OkButtonText {
+            get {
+                return ResourceManager.GetString("OkButtonText", resourceCulture);
             }
         }
         
@@ -169,11 +205,29 @@ namespace UpcomingMovies.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Unknown button value.
+        /// </summary>
+        public static string UnknownButtonText {
+            get {
+                return ResourceManager.GetString("UnknownButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Do you want to close the app?.
         /// </summary>
         public static string WantToClose {
             get {
                 return ResourceManager.GetString("WantToClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Yes.
+        /// </summary>
+        public static string YesButtonText {
+            get {
+                return ResourceManager.GetString("YesButtonText", resourceCulture);
             }
         }
     }

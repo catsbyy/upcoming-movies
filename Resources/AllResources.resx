@@ -124,6 +124,14 @@
   <data name="ApiKeyForLink" xml:space="preserve">
     <value>?api_key=</value>
   </data>
+  <data name="ButtonsText" xml:space="preserve">
+    <value>buttons</value>
+    <comment>текст для кнопки</comment>
+  </data>
+  <data name="CancelButtonText" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>текст для кнопки</comment>
+  </data>
   <data name="ForDaysLeft" xml:space="preserve">
     <value> days ago</value>
     <comment>додаток до результату, якщо фільм вийшов раніше поточної дати</comment>
@@ -140,6 +148,10 @@
     <value>https://api.themoviedb.org/3/movie/</value>
     <comment>шаблон для формування посилання на інформацію конкретного фільма</comment>
   </data>
+  <data name="NoButtonText" xml:space="preserve">
+    <value>No</value>
+    <comment>текст для кнопки</comment>
+  </data>
   <data name="NoDaysLeft" xml:space="preserve">
     <value>0</value>
     <comment>якщо фільм виходить не сьогодні</comment>
@@ -152,6 +164,10 @@
     <value>No more pages</value>
     <comment>текст повідомлення, якщо більше не існує сторінок для гортання</comment>
   </data>
+  <data name="OkButtonText" xml:space="preserve">
+    <value>OK</value>
+    <comment>текст для кнопки</comment>
+  </data>
   <data name="PageForLink" xml:space="preserve">
     <value>&amp;page=</value>
   </data>
@@ -162,8 +178,16 @@
     <value>&amp;sort_by=popularity</value>
     <comment>для сортування за популярністю</comment>
   </data>
+  <data name="UnknownButtonText" xml:space="preserve">
+    <value>Unknown button value</value>
+    <comment>текст для кнопки</comment>
+  </data>
   <data name="WantToClose" xml:space="preserve">
     <value>Do you want to close the app?</value>
     <comment>текст для вікна, який підтверджує вихід з програми</comment>
+  </data>
+  <data name="YesButtonText" xml:space="preserve">
+    <value>Yes</value>
+    <comment>текст для кнопки</comment>
   </data>
 </root>

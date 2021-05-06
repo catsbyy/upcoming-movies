@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UpcomingMovies.Resources;
 
 namespace UpcomingMovies.MVVM.View
 {
@@ -35,23 +36,23 @@ namespace UpcomingMovies.MVVM.View
             switch (buttons)
             {
                 case MessageBoxButton.OK:
-                    AddButton("OK", MessageBoxResult.OK);
+                    AddButton(AllResources.OkButtonText, MessageBoxResult.OK);
                     break;
                 case MessageBoxButton.OKCancel:
-                    AddButton("OK", MessageBoxResult.OK);
-                    AddButton("Cancel", MessageBoxResult.Cancel, isCancel: true);
+                    AddButton(AllResources.OkButtonText, MessageBoxResult.OK);
+                    AddButton(AllResources.CancelButtonText, MessageBoxResult.Cancel, isCancel: true);
                     break;
                 case MessageBoxButton.YesNo:
-                    AddButton("Yes", MessageBoxResult.Yes);
-                    AddButton("No", MessageBoxResult.No);
+                    AddButton(AllResources.YesButtonText, MessageBoxResult.Yes);
+                    AddButton(AllResources.NoButtonText, MessageBoxResult.No);
                     break;
                 case MessageBoxButton.YesNoCancel:
-                    AddButton("Yes", MessageBoxResult.Yes);
-                    AddButton("No", MessageBoxResult.No);
-                    AddButton("Cancel", MessageBoxResult.Cancel, isCancel: true);
+                    AddButton(AllResources.YesButtonText, MessageBoxResult.Yes);
+                    AddButton(AllResources.NoButtonText, MessageBoxResult.No);
+                    AddButton(AllResources.CancelButtonText, MessageBoxResult.Cancel, isCancel: true);
                     break;
                 default:
-                    throw new ArgumentException("Unknown button value", "buttons");
+                    throw new ArgumentException(AllResources.UnknownButtonText, AllResources.ButtonsText);
             }
         }
         void AddButton(string text, MessageBoxResult result, bool isCancel = false)
