@@ -61,27 +61,29 @@ namespace UpcomingMovies
             string upcomingMoviesLink = AllResources.AllMoviesLinkTemplate + ResourceAPI.api_key + AllResources.PageForLink + page_number + AllResources.RegionForLink;
 
             HttpWebRequest apiRequest = WebRequest.Create(upcomingMoviesLink) as HttpWebRequest;
-
             string apiResponse = "";
-            using (HttpWebResponse response = apiRequest.GetResponse() as HttpWebResponse)
+            try
             {
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                apiResponse = reader.ReadToEnd();
+                using (HttpWebResponse response = apiRequest.GetResponse() as HttpWebResponse)
+                {
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    apiResponse = reader.ReadToEnd();
+                }
+                ResponseSearchMovies rootObject = JsonConvert.DeserializeObject<ResponseSearchMovies>(apiResponse);
+                foreach (Result result in rootObject.results)
+                {
+                    //створення нового екземпляру фільму
+                    TheMovieDb movie = new TheMovieDb();
+                    movie.title = result.title;
+                    movie.poster_path = CreatePosterPath(result.poster_path);
+                    movie.release_date = RightDateFormat(result.release_date);
+                    movie.id = result.id;
+                    //додавання екземпляру фільму до колекції фільмів на сторінці
+                    MoviesCollectionOnPage.Add(movie);
+                }
             }
-
-            ResponseSearchMovies rootObject = JsonConvert.DeserializeObject<ResponseSearchMovies>(apiResponse);
-
-            foreach (Result result in rootObject.results)
-            {
-                //створення нового екземпляру фільму
-                TheMovieDb movie = new TheMovieDb();
-                movie.title = result.title;
-                movie.poster_path = CreatePosterPath(result.poster_path);
-                movie.release_date = RightDateFormat(result.release_date);
-                movie.id = result.id;
-                //додавання екземпляру фільму до колекції фільмів на сторінці
-                MoviesCollectionOnPage.Add(movie);
-            }
+            catch
+            {  }
         }
 
         //метод, який повертає значення про кількість сторінок 
@@ -244,18 +246,25 @@ namespace UpcomingMovies
             HttpWebRequest apiRequest = WebRequest.Create(movieLink) as HttpWebRequest;
 
             string apiResponse = "";
-            using (HttpWebResponse response = apiRequest.GetResponse() as HttpWebResponse)
+            try
             {
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                apiResponse = reader.ReadToEnd();
-            }
+                using (HttpWebResponse response = apiRequest.GetResponse() as HttpWebResponse)
+                {
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    apiResponse = reader.ReadToEnd();
+                }
 
-            TheMovieDb rootObject = JsonConvert.DeserializeObject<TheMovieDb>(apiResponse);
-            TheMovieDb movie = new TheMovieDb();
-            movie = CreateMovie(movie, rootObject);
-            
-            movieDetails.Add(movie);
-            return movieDetails;
+                TheMovieDb rootObject = JsonConvert.DeserializeObject<TheMovieDb>(apiResponse);
+                TheMovieDb movie = new TheMovieDb();
+                movie = CreateMovie(movie, rootObject);
+
+                movieDetails.Add(movie);
+                return movieDetails;
+            }
+            catch
+            {
+                return movieDetails;
+            }
         }
 
         //порожня колекція
