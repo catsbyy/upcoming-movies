@@ -1,4 +1,4 @@
-# <img src="https://github.com/v-andrusenko/UpcomingMovies/blob/master/Resources/Images/movies_light.png?raw=true" alt="Image" style="zoom: 10%;" /> Upcoming Movies
+# <img src="https://github.com/v-andrusenko/UpcomingMovies/blob/master/Resources/Images/movies_light.png?raw=true" alt="Image" width="70" /> Upcoming Movies
 
 ![GitHub code size in bytes](https://img.shields.io/github/repo-size/v-andrusenko/UpcomingMovies) ![GitHub issues](https://img.shields.io/github/downloads/v-andrusenko/UpcomingMovies/total)
 
