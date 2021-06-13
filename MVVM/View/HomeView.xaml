@@ -35,7 +35,7 @@
                     <StackPanel VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
                                 Margin="20">
-                        <TextBlock Text="UpcomingMovies is designed to show a list of movies that will be released soon and show their descriptions"
+                        <TextBlock Text="Upcoming Movies is designed to show a list of movies that will be released soon and show their descriptions"
                                    Foreground="White"
                                    FontSize="20"
                                    TextWrapping="Wrap"
