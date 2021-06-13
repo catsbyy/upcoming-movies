@@ -2,7 +2,7 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/repo-size/v-andrusenko/UpcomingMovies) ![GitHub issues](https://img.shields.io/github/downloads/v-andrusenko/UpcomingMovies/total)
 
-"Upcoming Movies" application is designed to show a list of movies that will be released soon and show their descriptions.
+The "Upcoming Movies" application is designed to show a list of movies that will be released soon and show their descriptions.
 
 <img src="https://user-images.githubusercontent.com/70683676/121805537-5dec0480-cc54-11eb-8982-b6d1a863829e.gif" alt="moviesGif (1)" style="zoom: 67%;" /> 
 
