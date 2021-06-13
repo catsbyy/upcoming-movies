@@ -61,7 +61,7 @@ namespace UpcomingMovies.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на 26b7ae141e58a83c93813fb97871365b.
+        ///   Ищет локализованную строку, похожую на .
         /// </summary>
         internal static string api_key {
             get {

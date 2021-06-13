@@ -40,16 +40,16 @@ namespace UpcomingMovies.MVVM.ViewModel
         {
             get {
                 return new RelayCommand(o =>
-              {
-                  if (paging_info.CurrentPage != paging_info.TotalPages)
-                  {
-                      paging_info.CurrentPage++;
-                      tmdb.GetMovies(paging_info.CurrentPage);
-                  }
-                  else
-                  {
-                      CustomMessageBox.Show(AllResources.NoMorePagesMessage, MessageBoxButton.OK);
-                  }
+                {
+                    if (paging_info.CurrentPage != paging_info.TotalPages)
+                    {
+                        paging_info.CurrentPage++;
+                        tmdb.GetMovies(paging_info.CurrentPage);
+                    }
+                    else
+                    {
+                        CustomMessageBox.Show(AllResources.NoMorePagesMessage, MessageBoxButton.OK);
+                    }
               }); }
         }
         public ICommand GoToPreviousPage
